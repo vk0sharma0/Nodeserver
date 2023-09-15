@@ -18,7 +18,7 @@ const  url='http://myapplication-env.eba-p3miuaui.ap-south-1.elasticbeanstalk.co
 
 
 fetch(url,option)
-.then((res)=>res.json())
+.then((res)=>res.text())
 .then((data)=>{
 if (!data){
     console.log("error")
