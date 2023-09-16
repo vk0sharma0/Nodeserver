@@ -12,7 +12,7 @@ const option ={
         'Access-Control-Allow-Origin':'*'
     }
 }
- const  url='http://myapplication-env.eba-p3miuaui.ap-south-1.elasticbeanstalk.com/' 
+ const  url ='http://myapplication-env.eba-p3miuaui.ap-south-1.elasticbeanstalk.com/'
 
 
 
