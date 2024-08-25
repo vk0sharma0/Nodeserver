@@ -13,19 +13,9 @@ const corsOptions = {
 };
 
 // Set up route to proxy the NSE India API request
-app.get('/', cors(corsOptions), async (req, res) => {
-    try {
-        if (!jsonData) {
-            await myfun(); // Ensure jsonData is set
-        }
-        res.send(jsonData);
-        console.log("data sent")
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Internal server error' }); // Fixed typo
-    }
-});
 
+     myfun(); // Ensure jsonData is set
+        
 async function myfun() {
     try {
         const response = await fetch('https://www.nseindia.com/api/option-chain-indices?symbol=NIFTY', {
@@ -40,7 +30,7 @@ async function myfun() {
         const data = await response.text();
         jsonData = JSON.parse(data);
 
-        console.log(jsonData.records.timestamp);
+        console.log(jsonData);
         // Removed undefined variable `symbol` from `console.log`
 
     } catch (error) {
